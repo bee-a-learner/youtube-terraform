@@ -1,9 +1,12 @@
+
+#using local variables in output
 locals {
   weight = 67.88
   age = 35
   name = "John"
 }
 
+#using local variables in output
 output "using_string_var" {
     value = local.name
 }
