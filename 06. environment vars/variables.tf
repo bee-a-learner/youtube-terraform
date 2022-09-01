@@ -1,3 +1,17 @@
+variable "client_id" {
+    type = string
+    description = "(optional) clientId"
+    default = "value"
+}
+#Set-Item -Path env:TF_VAR_client_secret -Value "some%£1SE&"
+
+
+variable "client_secret" {
+    type = string
+    description = "(optional) secret"
+    default = "value"
+}
+
 variable "environment_name" {
     type = string
     description = "environment name"

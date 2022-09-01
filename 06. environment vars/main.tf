@@ -5,9 +5,17 @@ locals {
     tags = var.tags
   }
 
+  azure_secret = {
+    user_id = var.client_id
+    password =  var.client_secret
+  }
+
   uppercase_env = upper(var.environment_name)
 }
 
+output "output_azure_secret" {
+  value = local.azure_secret
+}
 output "output_azure_resource" {
     value = local.azure_resource
 }
@@ -22,3 +30,4 @@ output "upper_env" {
 output "interpoltion" {
     value = "${var.environment_name} and test"
 }
+

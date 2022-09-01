@@ -2,22 +2,30 @@
 
 so far we have understood how to declare the different types of variabels how to provide default values to the variabels.
 
-how about proving variable value at terraform run time rather then default value
+How about provding variable value as command line environment variable?
 
-Terraform offers a special reserve file to set the variable value that is known as ```terraform.tfvars```
+You can use the reserved prefix TF_VAR_ and prefix this with you variable.
 
-this is a reserved file which can be used to spefiy the value of your variable.
-
-here an example
+for an example if you have variable name as user_name in terraform configuration
 
 ```
-resource_group_name =  "rg-dev-01"
+variable "user_name" {
+    type = string
+    description = "environment name"
+    default = "dev"
+}
+```
+you can set the value of this environment variable like ```TF_VAR_user_name ```
 
-#set the location value
+To set the value as environment variables in windows you can use following command
 
-location            =  "eastus"
+```
+Set-Item -Path env:TF_VAR_user_name -Value "terraform_user"
 
 ```
 
+in linux or macOS
 
-#Limitations
+```
+export TF_VAR_user_name=terraform_user
+```

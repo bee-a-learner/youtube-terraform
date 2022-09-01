@@ -2,7 +2,7 @@
 
 so far we have understood how to declare the different types of variabels how to provide default values to the variabels.
 
-how about proving variable value at terraform run time rather then default value
+how about provding variable value at terraform run time rather then default value
 
 Terraform offers a special reserve file to set the variable value that is known as ```terraform.tfvars```
 
